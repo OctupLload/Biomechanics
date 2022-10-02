@@ -2,24 +2,35 @@ package com.biomechanics.controllers;
 
 import com.biomechanics.domain.Section;
 import com.biomechanics.repository.SectionRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
-@Controller
+@RestController
+@RequestMapping("/sections")
 public class SectionController {
-    @Autowired
-    private SectionRepository sectionRepository;
 
-    @GetMapping("/sections")
-    public String section(@RequestParam int section_id = "section_id" Map<String, Object> model) {
-        Iterable<Section> sections = SectionRepository.findById(section_id);
+    private final SectionRepository sectionRepository;
 
-        model.put("sections", sections);
+    public SectionController(SectionRepository sectionRepository) {
+        this.sectionRepository = sectionRepository;
+    }
 
-        return "good";
+    @PostMapping("/")
+    public ResponseEntity saveSection(@RequestBody Section section) {
+        try {
+            sectionRepository.save(section);
+            return ResponseEntity.ok("Раздел/тема сохранен");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Произошла ошибка сохранения");
+        }
+    }
+
+    @GetMapping
+    public ResponseEntity getSections(){
+        try {
+            return ResponseEntity.ok("Сервер работает");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Произошла ошибка");
+        }
     }
 }

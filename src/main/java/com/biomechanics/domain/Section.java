@@ -8,14 +8,21 @@ import javax.persistence.Id;
 
 @Entity
 public class Section {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int section_id;
     private String section_title;
     private String section_description;
     private String section_preview_url;
 
-    Section() {}
+    Section() {};
+
+    Section(String section_title, String section_description, String section_preview_url) {
+        this.section_title = section_title;
+        this.section_description = section_description;
+        this.section_preview_url = section_preview_url;
+    }
 
     public int getSection_id() {
         return section_id;
