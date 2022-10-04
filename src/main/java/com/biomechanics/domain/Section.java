@@ -17,51 +17,38 @@ public class Section {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer section_id;
 
     @Column(name = "section_title")
     private String sectionTitle;
 
-    private String section_description;
-    private String section_preview_url;
+    @Column(name = "section_description")
+    private String sectionDescription;
+
+    @Column(name = "section_preview_url")
+    private String sectionPreviewUrl;
 
     Section() {};
 
-    Section(String section_title, String section_description, String section_preview_url) {
-        this.section_title = section_title;
-        this.section_description = section_description;
-        this.section_preview_url = section_preview_url;
+    Section(String sectionTitle, String sectionDescription, String sectionPreviewUrl) {
+        this.sectionTitle = sectionTitle;
+        this.sectionDescription = sectionDescription;
+        this.sectionPreviewUrl = sectionPreviewUrl;
     }
 
-    public int getId() {
-        return id;
+    public void setSectionId(int section_id) {
+        this.section_id = section_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setSectionTitle(String sectionTitle) {
+        this.sectionTitle = sectionTitle;
     }
 
-    public String getSection_title() {
-        return section_title;
+    public void setSectionDescription(String sectionDescription) {
+        this.sectionDescription = sectionDescription;
     }
 
-    public void setSection_title(String section_title) {
-        this.section_title = section_title;
-    }
-
-    public String getSection_description() {
-        return section_description;
-    }
-
-    public void setSection_description(String section_description) {
-        this.section_description = section_description;
-    }
-
-    public String getSection_preview_url() {
-        return section_preview_url;
-    }
-
-    public void setSection_preview_url(String section_preview_url) {
-        this.section_preview_url = section_preview_url;
+    public void setSectionPreviewUrl(String sectionPreviewUrl) {
+        this.sectionPreviewUrl = sectionPreviewUrl;
     }
 }

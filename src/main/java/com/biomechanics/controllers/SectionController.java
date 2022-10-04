@@ -1,38 +1,35 @@
 package com.biomechanics.controllers;
 
 import com.biomechanics.domain.Section;
-import com.biomechanics.repository.SectionRepository;
+import com.biomechanics.services.SectionService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/sections")
 @AllArgsConstructor
 public class SectionController {
 
-    private final SectionRepository sectionRepository;
-
-    @PostMapping("/")
-    public ResponseEntity saveSection(@RequestBody Section section) {
-        try {
-            sectionRepository.save(section);
-            return ResponseEntity.ok("Раздел/тема сохранен");
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body("Произошла ошибка сохранения");
-        }
-    }
+    private final SectionService sectionService;
 
     @GetMapping(value="/{id}")
     public ResponseEntity<Section> getSections(@PathVariable Integer id){
-        try {
-            var record = sectionRepository.findById(id);
-            return ResponseEntity.of(record);
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().build();
-        }
+        return ResponseEntity.of(sectionService.getSectionById(id));
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<?> createSection(@RequestBody Section section) {
+        sectionService.createSection(section);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @PostMapping("/deleteById/{id}")
+    public ResponseEntity<?> deleteSectionById(@PathVariable Integer id) {
+        sectionService.deleteSectionById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
