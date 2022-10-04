@@ -1,18 +1,27 @@
 package com.biomechanics.domain;
 
 
+import lombok.Getter;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Getter
+@Table(name = "sections")
 public class Section {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int section_id;
-    private String section_title;
+    private Integer id;
+
+    @Column(name = "section_title")
+    private String sectionTitle;
+
     private String section_description;
     private String section_preview_url;
 
@@ -24,12 +33,12 @@ public class Section {
         this.section_preview_url = section_preview_url;
     }
 
-    public int getSection_id() {
-        return section_id;
+    public int getId() {
+        return id;
     }
 
-    public void setSection_id(int section_id) {
-        this.section_id = section_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getSection_title() {

@@ -2,7 +2,8 @@ package com.biomechanics.repository;
 
 import com.biomechanics.domain.Section;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface SectionRepository extends CrudRepository<Section, Long> {
-    Section save(Section section);
+@Repository
+public interface SectionRepository extends CrudRepository<Section, Integer> {
 }
