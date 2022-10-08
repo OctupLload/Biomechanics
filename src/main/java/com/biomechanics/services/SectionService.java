@@ -29,7 +29,11 @@ public class SectionService implements ServiceImpl{
         return sectionRepository.findById(id);
     }
 
-    public Section findByCity(String city) {
+    public List<Section> findByCity(String city) {
         return sectionRepository.findByCity(city);
+    }
+
+    public List<Section> findByTitle(String title) {
+        return sectionRepository.findByTitle();
     }
 }

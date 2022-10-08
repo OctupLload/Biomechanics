@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/sections")
@@ -28,7 +30,12 @@ public class SectionController {
     }
 
     @PostMapping("/findByCity/{city}")
-    public ResponseEntity<Section> findSectionByCity(@PathVariable String city) {
+    public ResponseEntity<List<Section>> findSectionByCity(@PathVariable String city) {
         return ResponseEntity.of(sectionService.findByCity(city));
+    }
+
+    @PostMapping("/findByTitle/{title}")
+    public ResponseEntity<List<Section>> findSectionByTitle(@PathVariable String title) {
+        return ResponseEntity.of(sectionService.findByTitle(title));
     }
 }

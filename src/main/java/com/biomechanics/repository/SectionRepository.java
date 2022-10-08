@@ -8,5 +8,4 @@ import java.util.List;
 
 @Repository
 public interface SectionRepository extends CrudRepository<Section, Integer> {
-    Section findByCity(String city);
 }
