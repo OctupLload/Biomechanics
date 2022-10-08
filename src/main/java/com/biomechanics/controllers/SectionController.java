@@ -29,13 +29,13 @@ public class SectionController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PostMapping("/findByCity/{city}")
-    public ResponseEntity<List<Section>> findSectionByCity(@PathVariable String city) {
-        return ResponseEntity.of(sectionService.findByCity(city));
-    }
-
-    @PostMapping("/findByTitle/{title}")
-    public ResponseEntity<List<Section>> findSectionByTitle(@PathVariable String title) {
-        return ResponseEntity.of(sectionService.findByTitle(title));
-    }
+//    @PostMapping("/findByCity/{city}")
+//    public ResponseEntity<List<Section>> findSectionByCity(@PathVariable String city) {
+//        return ResponseEntity.of(sectionService.findByCity(city));
+//    }
+//
+//    @PostMapping("/findByTitle/{title}")
+//    public ResponseEntity<List<Section>> findSectionByTitle(@PathVariable String title) {
+//        return ResponseEntity.of(sectionService.findByTitle(title));
+//    }
 }

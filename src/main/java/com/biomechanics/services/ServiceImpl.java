@@ -5,7 +5,7 @@ import java.util.Optional;
 
 public interface ServiceImpl <T>{
 
-    List<T> findAll();
+//    List<T> findAll();
 
     Optional<T> findById(Integer id);
 

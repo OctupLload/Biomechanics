@@ -14,10 +14,10 @@ public class SectionService implements ServiceImpl{
 
     private final SectionRepository sectionRepository;
 
-    @Override
-    public List<Section> findAll() {
-
-    }
+//    @Override
+//    public List<Section> findAll() {
+//        return sectionRepository.findAll();
+//    }
 
     @Override
     public void deleteById(Integer id) {
@@ -29,11 +29,11 @@ public class SectionService implements ServiceImpl{
         return sectionRepository.findById(id);
     }
 
-    public List<Section> findByCity(String city) {
-        return sectionRepository.findByCity(city);
-    }
-
-    public List<Section> findByTitle(String title) {
-        return sectionRepository.findByTitle();
-    }
+//    public List<Section> findByCity(String city) {
+//        return sectionRepository.findByCity(city);
+//    }
+//
+//    public List<Section> findByTitle(String title) {
+//        return sectionRepository.findByTitle();
+//    }
 }
