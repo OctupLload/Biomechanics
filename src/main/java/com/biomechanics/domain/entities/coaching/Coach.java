@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 @Getter
@@ -15,8 +17,15 @@ public class Coach {
     private Integer id;
     private String info;
     private int experience;
+
+    @OneToMany
+    @JoinColumn(name = "person_id")
     private Person person;
+
+    @OneToMany
+    @JoinColumn(name = "belt_id")
     private Belt belt;
+
     private String createDate;
     private String editDate;
 

@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 @Getter
@@ -16,6 +18,9 @@ public class Address {
     private String address;
     private String createDate;
     private String editDate;
+
+    @OneToMany
+    @JoinColumn(name = "city_id")
     private City city;
 
     Address() {
