@@ -1,5 +1,6 @@
 package com.biomechanics.domain.entities.coaching;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import javax.persistence.Entity;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
 public class Belt {
     private Integer id;
     private String color;
@@ -15,11 +17,4 @@ public class Belt {
     private String beltPictureUrl;
 
     Belt() {}
-
-    public Belt(Integer id, String color, byte stripes, String beltPictureUrl) {
-        this.id = id;
-        this.color = color;
-        this.stripes = stripes;
-        this.beltPictureUrl = beltPictureUrl;
-    }
 }

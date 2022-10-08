@@ -1,13 +1,19 @@
 package com.biomechanics.domain.entities.sections;
 
+import com.biomechanics.domain.entities.coaching.Coach;
+import com.biomechanics.domain.entities.general.Address;
+import com.biomechanics.domain.entities.general.Contact;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
 public class SectionInfo {
     private Integer id;
     private String title;
@@ -24,20 +30,4 @@ public class SectionInfo {
 
     SectionInfo() {}
 
-    SectionInfo(Integer id, String title, String shortDescription, String fullDescription,
-                String previewUrl, String imageUrl, Address address, List<Contact> contacts,
-                List<Coach> coachCollection, Boolean isActive, String createDate, String editDate) {
-        this.id = id;
-        this.title = title;
-        this.shortDescription = shortDescription;
-        this.fullDescription = fullDescription;
-        this.previewUrl = previewUrl;
-        this.imageUrl = imageUrl;
-        this.address = address;
-        this.contacts = contacts;
-        this.coachCollection = coachCollection;
-        this.isActive = isActive;
-        this.createDate = createDate;
-        this.editDate = editDate;
-    }
 }

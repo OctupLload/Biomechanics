@@ -5,34 +5,31 @@ import com.biomechanics.repository.SectionRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class SectionService {
+public class SectionService implements ServiceImpl{
 
     private final SectionRepository sectionRepository;
 
-    public void createSection(Section section) {
-        sectionRepository.save(section);
+    @Override
+    public List<Section> findAll() {
+
     }
 
-//    public getSectionAll() {
-//
-//    }
-//
-//    public updateSection() {
-//
-//    }
-//
-    public void deleteSectionById (Integer id) {
+    @Override
+    public void deleteById(Integer id) {
         sectionRepository.deleteById(id);
     }
 
-
-    public Optional<Section> getSectionById(Integer id) {
+    @Override
+    public Optional findById(Integer id) {
         return sectionRepository.findById(id);
     }
 
-
+    public Section findByCity(String city) {
+        return sectionRepository.findByCity(city);
+    }
 }

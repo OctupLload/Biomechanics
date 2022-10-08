@@ -18,18 +18,17 @@ public class SectionController {
 
     @GetMapping(value="/{id}")
     public ResponseEntity<Section> getSections(@PathVariable Integer id){
-        return ResponseEntity.of(sectionService.getSectionById(id));
-    }
-
-    @PostMapping("/create")
-    public ResponseEntity<?> createSection(@RequestBody Section section) {
-        sectionService.createSection(section);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return ResponseEntity.of(sectionService.findById(id));
     }
 
     @PostMapping("/deleteById/{id}")
     public ResponseEntity<?> deleteSectionById(@PathVariable Integer id) {
-        sectionService.deleteSectionById(id);
+        sectionService.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PostMapping("/findByCity/{city}")
+    public ResponseEntity<Section> findSectionByCity(@PathVariable String city) {
+        return ResponseEntity.of(sectionService.findByCity(city));
     }
 }
