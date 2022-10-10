@@ -19,7 +19,7 @@ public class Contact {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy = "contacts")
+    @OneToMany
     private List<Address> addresses;
 
     @ManyToOne

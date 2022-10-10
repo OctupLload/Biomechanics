@@ -1,11 +1,9 @@
 package com.biomechanics.repository;
 
-import com.biomechanics.domain.Section;
+import com.biomechanics.domain.entities.general.SectionInfosCoach;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
-public interface SectionRepository extends CrudRepository<Section, Integer> {
+public interface SectionRepository extends CrudRepository<SectionInfosCoach, Integer> {
 }

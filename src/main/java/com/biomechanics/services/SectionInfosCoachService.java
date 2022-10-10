@@ -1,6 +1,6 @@
 package com.biomechanics.services;
 
-import com.biomechanics.domain.Section;
+import com.biomechanics.domain.entities.general.SectionInfosCoach;
 import com.biomechanics.repository.SectionRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,18 +10,24 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class SectionService implements ServiceImpl{
+public class SectionInfosCoachService implements ServiceImpl<SectionInfosCoach>{
 
     private final SectionRepository sectionRepository;
-
-//    @Override
-//    public List<Section> findAll() {
-//        return sectionRepository.findAll();
-//    }
 
     @Override
     public void deleteById(Integer id) {
         sectionRepository.deleteById(id);
+    }
+
+
+    @Override
+    public void create(SectionInfosCoach object) {
+
+    }
+
+    @Override
+    public List<SectionInfosCoach> findAll() {
+        return null;
     }
 
     @Override

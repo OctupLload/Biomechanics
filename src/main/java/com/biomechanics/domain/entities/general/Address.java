@@ -20,7 +20,7 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy = "addresses")
+    @OneToMany
     private List<SectionInfo> sectionInfos;
 
     @ManyToOne

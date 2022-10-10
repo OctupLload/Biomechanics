@@ -18,7 +18,7 @@ public class Belt {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy = "")
+    @OneToMany
     private List<Coach> coaches;
 
     @Column(name = "belt_color")

@@ -1,27 +1,23 @@
 package com.biomechanics.controllers;
 
-import com.biomechanics.domain.Section;
-import com.biomechanics.services.SectionService;
+import com.biomechanics.services.SectionInfosCoachService;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 
 @RestController
 @RequestMapping("/sections")
 @AllArgsConstructor
-public class SectionController {
+public class SectionInfosCoachController {
 
-    private final SectionService sectionService;
+    private final SectionInfosCoachService sectionService;
 
-    @GetMapping(value="/{id}")
-    public ResponseEntity<Section> getSections(@PathVariable Integer id){
-        return ResponseEntity.of(sectionService.findById(id));
-    }
+//    @GetMapping(value="/{id}")
+//    public ResponseEntity<Section> getSections(@PathVariable Integer id){
+//        return ResponseEntity.of(sectionService.findById(id));
+//    }
 
     @PostMapping("/deleteById/{id}")
     public ResponseEntity<?> deleteSectionById(@PathVariable Integer id) {

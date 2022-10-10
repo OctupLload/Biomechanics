@@ -22,7 +22,7 @@ public class SectionInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy = "section_infos")
+    @OneToMany
     private List<SectionInfosCoach> sectionInfosCoaches;
 
     @Column(name = "section_info_title")

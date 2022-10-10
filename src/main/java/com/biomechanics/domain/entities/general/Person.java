@@ -20,7 +20,7 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy = "persons")
+    @OneToMany
     private List<Coach> coaches;
 
     @Column(name = "first_name")

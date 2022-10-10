@@ -19,7 +19,7 @@ public class City {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy = "cities")
+    @OneToMany
     private List<Address> addresses;
 
     @Column(name = "city_title")

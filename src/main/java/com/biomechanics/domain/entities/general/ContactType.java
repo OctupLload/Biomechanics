@@ -18,7 +18,7 @@ public class ContactType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy = "contact_types")
+    @OneToMany
     private List<Contact> contacts;
 
     @Column(name = "contact_title")
