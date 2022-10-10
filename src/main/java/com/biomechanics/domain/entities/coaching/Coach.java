@@ -13,15 +13,13 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-@Table(name = "coaches")
+@Table(name = "coaches", schema = "biomechanics")
 public class Coach {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "coach_id")
     private Integer id;
-
-    @OneToMany
-    private List<SectionInfosCoach> sectionInfosCoaches;
 
     @Column(name = "coach_info")
     private String info;

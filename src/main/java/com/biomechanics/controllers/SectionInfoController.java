@@ -3,6 +3,7 @@ package com.biomechanics.controllers;
 import com.biomechanics.domain.entities.sections.SectionInfo;
 import com.biomechanics.services.SectionInfoServiceImpl;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,13 +36,18 @@ public class SectionInfoController {
         return sectionInfoServiceImpl.findById(id);
     }
 
-    @GetMapping
-    public List<SectionInfo> findByCity(@RequestParam("city") String city) {
-        return sectionInfoServiceImpl.findByCity(city);
+    @GetMapping()
+    public Iterable<SectionInfo> findAll(){
+        return sectionInfoServiceImpl.findAll();
     }
 
-    @GetMapping
-    public List<SectionInfo> findByTitle(@RequestParam("title") String title) {
+//    @GetMapping
+//    public List<SectionInfo> findByCity(@RequestParam String city) {
+//        return sectionInfoServiceImpl.findByCity(city);
+//    }
+
+    @GetMapping("/")
+    public List<SectionInfo> findByTitle(@RequestParam(value = "title") String title) {
         return sectionInfoServiceImpl.findByTitle(title);
     }
 

@@ -13,11 +13,12 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-@Table(name = "persons")
+@Table(name = "persons", schema = "biomechanics")
 public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "person_id")
     private Integer id;
 
     @OneToMany

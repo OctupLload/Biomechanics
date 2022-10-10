@@ -11,15 +11,13 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-@Table(name = "belts")
+@Table(name = "belts", schema = "biomechanics")
 public class Belt {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "belt_id")
     private Integer id;
-
-    @OneToMany
-    private List<Coach> coaches;
 
     @Column(name = "belt_color")
     private String color;

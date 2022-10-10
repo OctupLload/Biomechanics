@@ -7,7 +7,7 @@ public interface CrudService<T>{
 
     void create(T object);
 
-    List<T> findAll();
+    Iterable<T> findAll();
 
     Optional<T> findById(Integer id);
 

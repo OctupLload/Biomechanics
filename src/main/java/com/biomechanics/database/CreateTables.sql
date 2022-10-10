@@ -61,7 +61,7 @@ CREATE TABLE biomechanics.section_infos (
 	section_info_id serial PRIMARY KEY,
 	section_info_title varchar(255),
 	short_description varchar(255),
-	full_descriotion varchar(255),
+	full_description varchar(255),
 	preview_url text,
 	image_url text,
 	address_id int,

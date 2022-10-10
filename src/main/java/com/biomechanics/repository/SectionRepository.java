@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface SectionRepository extends CrudRepository<SectionInfo, Integer> {
-    List<SectionInfo> findByCity(String city);
+//    List<SectionInfo> findByCity(String city);
 
     List<SectionInfo> findByTitle(String title);
 }

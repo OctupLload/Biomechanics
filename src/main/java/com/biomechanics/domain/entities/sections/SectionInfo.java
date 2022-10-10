@@ -15,15 +15,13 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-@Table(name = "section_infos")
+@Table(name = "section_infos", schema = "biomechanics")
 public class SectionInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "section_info_id")
     private Integer id;
-
-    @OneToMany
-    private List<SectionInfosCoach> sectionInfosCoaches;
 
     @Column(name = "section_info_title")
     private String title;

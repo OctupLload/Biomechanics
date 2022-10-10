@@ -16,11 +16,11 @@ public class SectionInfoServiceImpl implements SectionInfoService<SectionInfo> {
     private final SectionRepository sectionRepository;
 
     @Override
-    public void create(SectionInfo object) { }
+    public void create(SectionInfo sectionInfo) { }
 
     @Override
-    public List<SectionInfo> findAll() {
-        return null;
+    public Iterable<SectionInfo> findAll() {
+        return sectionRepository.findAll();
     }
 
     @Override
@@ -33,9 +33,10 @@ public class SectionInfoServiceImpl implements SectionInfoService<SectionInfo> {
         sectionRepository.delete(sectionInfo);
     }
 
-    public List<SectionInfo> findByCity(String city) {
-        return sectionRepository.findByCity(city);
-    }
+
+//    public List<SectionInfo> findByCity(String city) {
+//        return sectionRepository.findByCity(city);
+//    }
 
     public List<SectionInfo> findByTitle(String title) {
         return sectionRepository.findByTitle(title);

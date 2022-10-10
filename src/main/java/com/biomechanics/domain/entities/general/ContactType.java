@@ -11,15 +11,13 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-@Table(name = "contact_types")
+@Table(name = "contact_types", schema = "biomechanics")
 public class ContactType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "contact_type_id")
     private Integer id;
-
-    @OneToMany
-    private List<Contact> contacts;
 
     @Column(name = "contact_title")
     private String title;

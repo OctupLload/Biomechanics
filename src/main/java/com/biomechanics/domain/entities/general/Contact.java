@@ -12,18 +12,16 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-@Table(name = "contacts")
+@Table(name = "contacts", schema = "biomechanics")
 public class Contact {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "contact_id")
     private Integer id;
 
-    @OneToMany
-    private List<Address> addresses;
-
     @ManyToOne
-    @JoinColumn(name = "type_id")
+    @JoinColumn(name = "contact_type_id")
     private ContactType type;
 
     @Column(name = "value")

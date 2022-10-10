@@ -12,11 +12,12 @@ import javax.persistence.*;
 @Getter
 @Setter
 @AllArgsConstructor
-@Table(name = "section_infos_coaches")
+@Table(name = "section_infos_coaches", schema = "biomechanics")
 public class SectionInfosCoach {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "section_infos_contact_id")
     private Integer id;
 
     @ManyToOne
