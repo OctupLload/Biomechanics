@@ -3,7 +3,7 @@ package com.biomechanics.services;
 import java.util.List;
 import java.util.Optional;
 
-public interface ServiceImpl <T>{
+public interface CrudService<T>{
 
     void create(T object);
 
@@ -11,5 +11,5 @@ public interface ServiceImpl <T>{
 
     Optional<T> findById(Integer id);
 
-    void deleteById(Integer id);
+    void delete (T object);
 }
