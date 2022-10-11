@@ -1,4 +1,7 @@
-CREATE SCHEMA biomechanics;
+--liquibase formatted sql
+
+--changeset emikhailenko:BIOMECHANICS_TABLES stripComments:true
+--preconditions onFail:MARK_RAN
 
 CREATE TABLE biomechanics.belts (
 	belt_id serial PRIMARY KEY,

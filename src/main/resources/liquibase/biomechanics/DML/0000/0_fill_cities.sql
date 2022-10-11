@@ -1,3 +1,8 @@
+--liquibase formatted sql
+
+--changeset emikhailenko:CITIES_FILL stripComments:true
+--preconditions onFail:MARK_RAN
+
 insert into biomechanics.cities (city_title) values ('Burgastai');
 insert into biomechanics.cities (city_title) values ('Kabor');
 insert into biomechanics.cities (city_title) values ('Himanka');

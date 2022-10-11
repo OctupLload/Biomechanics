@@ -1,3 +1,8 @@
+--liquibase formatted sql
+
+--changeset emikhailenko:SECTION_INFOS_FILL stripComments:true
+--preconditions onFail:MARK_RAN
+
 INSERT INTO biomechanics.section_infos (section_info_title,
 										short_description,
 										preview_url,
