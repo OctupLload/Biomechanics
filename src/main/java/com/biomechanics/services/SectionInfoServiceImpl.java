@@ -33,10 +33,9 @@ public class SectionInfoServiceImpl implements SectionInfoService<SectionInfo> {
         sectionRepository.delete(sectionInfo);
     }
 
-
-//    public List<SectionInfo> findByCity(String city) {
-//        return sectionRepository.findByCity(city);
-//    }
+    public List<SectionInfo> findByCity(String city) {
+        return sectionRepository.findByCity(city);
+    }
 
     public List<SectionInfo> findByTitle(String title) {
         return sectionRepository.findByTitle(title);

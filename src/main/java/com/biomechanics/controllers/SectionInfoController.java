@@ -36,15 +36,15 @@ public class SectionInfoController {
         return sectionInfoServiceImpl.findById(id);
     }
 
-    @GetMapping()
+    @GetMapping("/ec")
     public Iterable<SectionInfo> findAll(){
         return sectionInfoServiceImpl.findAll();
     }
 
-//    @GetMapping
-//    public List<SectionInfo> findByCity(@RequestParam String city) {
-//        return sectionInfoServiceImpl.findByCity(city);
-//    }
+    @GetMapping("/city")
+    public List<SectionInfo> findByCity(@RequestParam(value = "city") String city) {
+        return sectionInfoServiceImpl.findByCity(city);
+    }
 
     @GetMapping("/")
     public List<SectionInfo> findByTitle(@RequestParam(value = "title") String title) {
