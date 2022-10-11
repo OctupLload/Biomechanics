@@ -6,7 +6,7 @@ insert into biomechanics.cities (city_title) values ('Zomba');
 insert into biomechanics.cities (city_title) values ('Hankasalmi');
 insert into biomechanics.cities (city_title) values ('Palmas Bellas');
 insert into biomechanics.cities (city_title) values ('Huai Mek');
-insert into biomechanics.cities (city_title) values ('Shums’k');
+insert into biomechanics.cities (city_title) values ('Shumsâ€™k');
 insert into biomechanics.cities (city_title) values ('Vulcan');
 insert into biomechanics.cities (city_title) values ('Baracoa');
 insert into biomechanics.cities (city_title) values ('Shicheng');

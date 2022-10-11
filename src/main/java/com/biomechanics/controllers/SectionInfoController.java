@@ -14,41 +14,40 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/sections")
+@RequestMapping("/section_info")
 @AllArgsConstructor
 public class SectionInfoController {
 
     private final SectionInfoServiceImpl sectionInfoServiceImpl;
-
-    @PostMapping
-    public void create(@RequestBody SectionInfo sectionInfo) {
-        sectionInfoServiceImpl.create(sectionInfo);
-    }
-
-    @DeleteMapping("/")
-    public ResponseEntity<?> deleteById(@RequestBody SectionInfo sectionInfo) {
-        sectionInfoServiceImpl.delete(sectionInfo);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
 
     @GetMapping("/{id}")
     public Optional<SectionInfo> getById(@PathVariable Integer id) {
         return sectionInfoServiceImpl.findById(id);
     }
 
-    @GetMapping("/ec")
+    @GetMapping
     public Iterable<SectionInfo> findAll(){
         return sectionInfoServiceImpl.findAll();
     }
 
-    @GetMapping("/city")
+    @GetMapping(value = "city")
     public List<SectionInfo> findByCity(@RequestParam(value = "city") String city) {
         return sectionInfoServiceImpl.findByCity(city);
     }
 
-    @GetMapping("/")
+    @GetMapping(value = "title")
     public List<SectionInfo> findByTitle(@RequestParam(value = "title") String title) {
         return sectionInfoServiceImpl.findByTitle(title);
     }
 
+    @PostMapping()
+    public void create(@RequestBody SectionInfo sectionInfo) {
+        sectionInfoServiceImpl.create(sectionInfo);
+    }
+
+    @DeleteMapping
+    public ResponseEntity<?> delete(@RequestBody SectionInfo sectionInfo) {
+        sectionInfoServiceImpl.delete(sectionInfo);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
