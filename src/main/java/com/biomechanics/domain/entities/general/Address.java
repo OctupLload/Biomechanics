@@ -4,15 +4,16 @@ import com.biomechanics.domain.entities.coaching.City;
 import com.biomechanics.domain.entities.sections.SectionInfo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "addresses", schema = "biomechanics")
 public class Address {
 
@@ -37,7 +38,4 @@ public class Address {
     @ManyToOne
     @JoinColumn(name = "city_id")
     private City city;
-
-    Address() {
-    }
 }
