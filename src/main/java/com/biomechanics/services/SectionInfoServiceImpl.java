@@ -5,6 +5,7 @@ import com.biomechanics.repository.SectionRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,7 +20,7 @@ public class SectionInfoServiceImpl implements SectionInfoService<SectionInfo> {
     }
 
     @Override
-    public Iterable<SectionInfo> findAll() {
+    public List<SectionInfo> findAll() {
         return sectionRepository.findAll();
     }
 
@@ -33,11 +34,11 @@ public class SectionInfoServiceImpl implements SectionInfoService<SectionInfo> {
         sectionRepository.delete(sectionInfo);
     }
 
-    public Iterable<SectionInfo> findByCity(String city) {
+    public List<SectionInfo> findByCity(String city) {
         return sectionRepository.findByCity(city);
     }
 
-    public Iterable<SectionInfo> findByTitle(String title) {
+    public List<SectionInfo> findByTitle(String title) {
         return sectionRepository.findByTitle(title);
     }
 }

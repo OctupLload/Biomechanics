@@ -5,11 +5,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface SectionRepository extends CrudRepository<SectionInfo, Integer> {
 
     @Query("FROM SectionInfo si WHERE si.address.city.title = :city")
-    Iterable<SectionInfo> findByCity(String city);
+    List<SectionInfo> findByCity(String city);
 
-    Iterable<SectionInfo> findByTitle(String title);
+    List<SectionInfo> findByTitle(String title);
+
+    List<SectionInfo> findAll();
 }
