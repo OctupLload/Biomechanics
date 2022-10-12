@@ -27,12 +27,12 @@ public class SectionInfoController {
         return sectionInfoServiceImpl.findAll();
     }
 
-    @GetMapping(value = "city")
+    @GetMapping(params = "city")
     public Iterable<SectionInfo> findByCity(@RequestParam(value = "city") String city) {
         return sectionInfoServiceImpl.findByCity(city);
     }
 
-    @GetMapping(value = "title")
+    @GetMapping(params = "title")
     public Iterable<SectionInfo> findByTitle(@RequestParam(value = "title") String title) {
         return sectionInfoServiceImpl.findByTitle(title);
     }
