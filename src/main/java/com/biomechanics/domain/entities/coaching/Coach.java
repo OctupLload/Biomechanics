@@ -1,18 +1,18 @@
 package com.biomechanics.domain.entities.coaching;
 
 import com.biomechanics.domain.entities.general.Person;
-import com.biomechanics.domain.entities.general.SectionInfosCoach;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "coaches", schema = "biomechanics")
 public class Coach {
 
@@ -40,6 +40,4 @@ public class Coach {
 
     @Column(name = "edit_date")
     private String editDate;
-
-    Coach() {}
 }

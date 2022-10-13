@@ -4,6 +4,7 @@ import com.biomechanics.domain.entities.coaching.Coach;
 import com.biomechanics.domain.entities.sections.SectionInfo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "section_infos_coaches", schema = "biomechanics")
 public class SectionInfosCoach {
 

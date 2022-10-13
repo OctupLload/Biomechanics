@@ -2,15 +2,16 @@ package com.biomechanics.domain.entities.coaching;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "belts", schema = "biomechanics")
 public class Belt {
 
@@ -27,6 +28,4 @@ public class Belt {
 
     @Column(name = "belt_picture_url")
     private String beltPictureUrl;
-
-    Belt() {}
 }

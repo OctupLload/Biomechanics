@@ -1,20 +1,18 @@
 package com.biomechanics.domain.entities.sections;
 
-import com.biomechanics.domain.entities.coaching.Coach;
 import com.biomechanics.domain.entities.general.Address;
-import com.biomechanics.domain.entities.general.Contact;
-import com.biomechanics.domain.entities.general.SectionInfosCoach;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "section_infos", schema = "biomechanics")
 public class SectionInfo {
 
@@ -50,6 +48,4 @@ public class SectionInfo {
 
     @Column(name = "edit_date")
     private String editDate;
-
-    SectionInfo() {}
 }

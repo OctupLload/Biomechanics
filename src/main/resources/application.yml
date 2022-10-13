@@ -11,3 +11,7 @@ spring:
       maximum-pool-size: 10
   liquibase:
     change-log: classpath:liquibase/changelog.xml
+  security:
+    user:
+      name: user
+      password: password

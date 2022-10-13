@@ -1,18 +1,17 @@
 package com.biomechanics.domain.entities.general;
 
-import com.biomechanics.domain.entities.coaching.Coach;
 import lombok.AllArgsConstructor;
-import lombok.Cleanup;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "persons", schema = "biomechanics")
 public class Person {
 
@@ -20,9 +19,6 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "person_id")
     private Integer id;
-
-    @OneToMany
-    private List<Coach> coaches;
 
     @Column(name = "first_name")
     private String firstName;
@@ -44,7 +40,4 @@ public class Person {
 
     @Column(name = "edit_date")
     private String editDate;
-
-    Person() {
-    }
 }

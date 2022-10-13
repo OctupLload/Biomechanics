@@ -1,17 +1,17 @@
 package com.biomechanics.domain.entities.coaching;
 
-import com.biomechanics.domain.entities.general.Address;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "cities", schema = "biomechanics")
 public class City {
 
@@ -28,6 +28,4 @@ public class City {
 
     @Column(name = "long_description")
     private String longDescription;
-
-    City() {}
 }
