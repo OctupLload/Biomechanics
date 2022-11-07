@@ -1,4 +1,4 @@
-package com.biomechanics.domain.entities.general;
+package com.biomechanics.domain.entities.sections;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,30 +6,27 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "contacts", schema = "biomechanics")
-public class Contact {
+@Table(name = "contact_types", schema = "biomechanics")
+public class ContactType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "contact_id")
+    @Column(name = "id")
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "contact_type_id")
-    private ContactType type;
-
-    @Column(name = "value")
-    private String value;
+    @Column(name = "type")
+    private String type;
 
     @Column(name = "create_date")
-    private String createDate;
+    private LocalDate createDate;
 
     @Column(name = "edit_date")
-    private String editDate;
+    private LocalDate editDate;
 }

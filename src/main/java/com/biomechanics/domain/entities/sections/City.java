@@ -1,4 +1,4 @@
-package com.biomechanics.domain.entities.coaching;
+package com.biomechanics.domain.entities.sections;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -17,15 +18,15 @@ public class City {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "city_id")
+    @Column(name = "id")
     private Integer id;
 
-    @Column(name = "city_title")
+    @Column(name = "title")
     private String title;
 
-    @Column(name = "short_description")
-    private String shortDescription;
+    @Column(name = "create_date")
+    private LocalDate createDate;
 
-    @Column(name = "long_description")
-    private String longDescription;
+    @Column(name = "edit_date")
+    private LocalDate editDate;
 }

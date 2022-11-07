@@ -1,13 +1,12 @@
-package com.biomechanics.domain.entities.general;
+package com.biomechanics.domain.entities.sections;
 
-import com.biomechanics.domain.entities.coaching.City;
-import com.biomechanics.domain.entities.sections.SectionInfo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -19,23 +18,19 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "address_id")
+    @Column(name = "id")
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "contact_id")
-    private Contact contact;
-
-    @Column(name = "address_location")
+    @Column(name = "location")
     private String location;
-
-    @Column(name = "create_date")
-    private String createDate;
-
-    @Column(name = "edit_date")
-    private String editDate;
 
     @ManyToOne
     @JoinColumn(name = "city_id")
     private City city;
+
+    @Column(name = "create_date")
+    private LocalDate createDate;
+
+    @Column(name = "edit_date")
+    private LocalDate editDate;
 }

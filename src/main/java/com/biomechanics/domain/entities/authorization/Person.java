@@ -1,4 +1,4 @@
-package com.biomechanics.domain.entities.general;
+package com.biomechanics.domain.entities.authorization;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -17,7 +18,7 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "person_id")
+    @Column(name = "id")
     private Integer id;
 
     @Column(name = "first_name")
@@ -29,15 +30,15 @@ public class Person {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "birthday")
-    private String birthday;
+    @Column(name = "phone")
+    private String phone;
 
-    @Column(name = "contact_phone")
-    private String contactPhone;
+    @Column(name = "birth_day")
+    private String birthDay;
 
     @Column(name = "create_date")
-    private String createDate;
+    private LocalDate createDate;
 
     @Column(name = "edit_date")
-    private String editDate;
+    private LocalDate editDate;
 }

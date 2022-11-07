@@ -1,32 +1,37 @@
-package com.biomechanics.domain.entities.general;
+package com.biomechanics.domain.entities.sections;
 
-import com.biomechanics.domain.entities.coaching.Coach;
-import com.biomechanics.domain.entities.sections.SectionInfo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "section_infos_coaches", schema = "biomechanics")
+@Table(name = "section_info_coaches", schema = "biomechanics")
 public class SectionInfosCoach {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "section_infos_contact_id")
+    @Column(name = "id")
     private Integer id;
+
+    @ManyToOne
+    @JoinColumn(name = "coach_id")
+    private Coach coach;
 
     @ManyToOne
     @JoinColumn(name = "section_info_id")
     private SectionInfo sectionInfo;
 
-    @ManyToOne
-    @JoinColumn(name = "coach_id")
-    private Coach coach;
+    @Column(name = "create_date")
+    private LocalDate createDate;
+
+    @Column(name = "edit_date")
+    private LocalDate editDate;
 }

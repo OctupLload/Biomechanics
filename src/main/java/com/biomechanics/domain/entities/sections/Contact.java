@@ -13,35 +13,24 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "section_infos", schema = "biomechanics")
-public class SectionInfo {
+@Table(name = "contacts", schema = "biomechanics")
+public class Contact {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "title")
-    private String title;
-
-    @Column(name = "short_description")
-    private String shortDescription;
-
-    @Column(name = "full_description")
-    private String fullDescription;
-
-    @Column(name = "preview_url")
-    private String previewUrl;
-
-    @Column(name = "image_url")
-    private String imageUrl;
+    @Column(name = "value")
+    private String value;
 
     @ManyToOne
-    @JoinColumn(name = "address_id")
-    private Address address;
+    @JoinColumn(name = "contact_type_id")
+    private ContactType contactType;
 
-    @Column(name = "is_active")
-    private byte isActive;
+    @ManyToOne
+    @JoinColumn(name = "section_info_id")
+    private SectionInfo sectionInfo;
 
     @Column(name = "create_date")
     private LocalDate createDate;

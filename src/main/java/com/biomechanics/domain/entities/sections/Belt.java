@@ -1,4 +1,4 @@
-package com.biomechanics.domain.entities.coaching;
+package com.biomechanics.domain.entities.sections;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -17,15 +18,21 @@ public class Belt {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "belt_id")
+    @Column(name = "id")
     private Integer id;
 
-    @Column(name = "belt_color")
+    @Column(name = "color")
     private String color;
 
-    @Column(name = "stripes")
-    private byte stripes;
+    @Column(name = "stripe")
+    private byte stripe;
 
-    @Column(name = "belt_picture_url")
-    private String beltPictureUrl;
+    @Column(name = "picture_url")
+    private String pictureUrl;
+
+    @Column(name = "create_date")
+    private LocalDate createDate;
+
+    @Column(name = "edit_date")
+    private LocalDate editDate;
 }

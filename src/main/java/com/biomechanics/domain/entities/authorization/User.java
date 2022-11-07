@@ -1,4 +1,4 @@
-package com.biomechanics.domain.entities.sections;
+package com.biomechanics.domain.entities.authorization;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,35 +13,30 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "section_infos", schema = "biomechanics")
-public class SectionInfo {
+@Table(name = "users", schema = "biomechanics")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "title")
-    private String title;
+    @Column(name = "login")
+    private String login;
 
-    @Column(name = "short_description")
-    private String shortDescription;
-
-    @Column(name = "full_description")
-    private String fullDescription;
-
-    @Column(name = "preview_url")
-    private String previewUrl;
-
-    @Column(name = "image_url")
-    private String imageUrl;
+    @Column(name = "password")
+    private String password;
 
     @ManyToOne
-    @JoinColumn(name = "address_id")
-    private Address address;
+    @JoinColumn(name = "role_id")
+    private Role role;
 
     @Column(name = "is_active")
     private byte isActive;
+
+    @ManyToOne
+    @JoinColumn(name = "person_id")
+    private Person person;
 
     @Column(name = "create_date")
     private LocalDate createDate;

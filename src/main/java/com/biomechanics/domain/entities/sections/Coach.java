@@ -1,12 +1,13 @@
-package com.biomechanics.domain.entities.coaching;
+package com.biomechanics.domain.entities.sections;
 
-import com.biomechanics.domain.entities.general.Person;
+import com.biomechanics.domain.entities.authorization.Person;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -18,14 +19,20 @@ public class Coach {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "coach_id")
+    @Column(name = "id")
     private Integer id;
 
-    @Column(name = "coach_info")
+    @Column(name = "info")
     private String info;
 
     @Column(name = "experience")
     private int experience;
+
+    @Column(name = "photo_url")
+    private String photoUrl;
+
+    @Column(name = "photo_preview_url")
+    private String photoPreviewUrl;
 
     @ManyToOne
     @JoinColumn(name = "person_id")
@@ -36,8 +43,8 @@ public class Coach {
     private Belt belt;
 
     @Column(name = "create_date")
-    private String createDate;
+    private LocalDate createDate;
 
     @Column(name = "edit_date")
-    private String editDate;
+    private LocalDate editDate;
 }
