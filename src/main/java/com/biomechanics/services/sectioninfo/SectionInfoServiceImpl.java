@@ -1,4 +1,4 @@
-package com.biomechanics.services;
+package com.biomechanics.services.sectioninfo;
 
 import com.biomechanics.domain.entities.sections.SectionInfo;
 import com.biomechanics.repository.SectionRepository;

@@ -1,4 +1,4 @@
-package com.biomechanics.domain.entities.authorization;
+package com.biomechanics.domain.entities.training;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,19 +13,21 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "roles", schema = "biomechanics")
-public class Role {
+@Table(name = "actions_tree", schema = "biomechanics")
+public class ActionTree {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "name")
-    private String name;
+    @ManyToOne
+    @JoinColumn(name = "actiond_id_prev")
+    private Action actionPrev;
 
-    @Column(name = "description")
-    private String description;
+    @ManyToOne
+    @JoinColumn(name = "actiond_id_next")
+    private Action actionNext;
 
     @Column(name = "create_date")
     private LocalDate createDate;

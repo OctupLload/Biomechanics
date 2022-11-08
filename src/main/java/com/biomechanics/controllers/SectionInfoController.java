@@ -1,7 +1,7 @@
 package com.biomechanics.controllers;
 
 import com.biomechanics.domain.entities.sections.SectionInfo;
-import com.biomechanics.services.SectionInfoServiceImpl;
+import com.biomechanics.services.sectioninfo.SectionInfoServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

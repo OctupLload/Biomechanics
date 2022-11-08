@@ -1,4 +1,4 @@
-package com.biomechanics.domain.entities.authorization;
+package com.biomechanics.domain.entities.terminology;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,8 +13,8 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "roles", schema = "biomechanics")
-public class Role {
+@Table(name = "terms", schema = "biomechanics")
+public class Term {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +26,14 @@ public class Role {
 
     @Column(name = "description")
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "video_id")
+    private Video video;
+
+    @ManyToOne
+    @JoinColumn(name = "term_type_id")
+    private TermType termType;
 
     @Column(name = "create_date")
     private LocalDate createDate;
