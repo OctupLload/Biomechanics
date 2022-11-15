@@ -12,7 +12,7 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/section_info")
+@RequestMapping("/sections")
 @AllArgsConstructor
 public class SectionInfoController {
 
