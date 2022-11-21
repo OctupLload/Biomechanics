@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -29,6 +30,7 @@ public class User {
 
     @ManyToOne
     @JoinColumn(name = "role_id")
+    @ColumnDefault("2")
     private Role role;
 
     @Column(name = "is_active")
