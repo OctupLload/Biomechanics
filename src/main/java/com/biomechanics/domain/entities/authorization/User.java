@@ -32,8 +32,11 @@ public class User {
     @JoinColumn(name = "role_id", insertable = false)
     private Role role;
 
-    @Column(name = "is_active")
+    @Column(name = "is_active", insertable = false)
     private byte isActive;
+
+    @Column(name = "is_delete", insertable = false)
+    private byte isDelete;
 
     @ManyToOne
     @JoinColumn(name = "person_id")
