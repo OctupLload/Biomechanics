@@ -7,7 +7,7 @@ CREATE TABLE biomechanics.users (
     "id" serial PRIMARY KEY,
     login varchar(45),
     "password" varchar(45),
-    role_id int,
+    role_id int DEFAULT 2,
     is_active smallint,
     person_id int,
     create_date date,

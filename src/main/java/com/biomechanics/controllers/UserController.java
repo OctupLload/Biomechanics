@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/auth")
@@ -16,17 +17,21 @@ public class UserController {
 
     private final UserServiceImpl userServiceImpl;
 
+    @GetMapping
+    public List<User> findAll(){
+        return userServiceImpl.findAll();
+    }
+
     @PostMapping()
     public ResponseEntity<Void> create(@RequestBody User user) {
         userServiceImpl.create(user);
         return ResponseEntity.created(URI.create("/user/" + user.getId())).build();
     }
 
-    @PostMapping()
-    public ResponseEntity<Integer> getExistUserByLoginAndPassword(@RequestParam(value = "login") String login,
-                                                               @RequestParam(value = "password") String password) {
-        int userExistsOrNot = userServiceImpl.findUserByLoginAndPassword(login, password);
-        return ResponseEntity.ok().body(userExistsOrNot);
+    @PostMapping("/login")
+    public Integer getExistUserByLoginAndPassword(@RequestParam(value = "login") String login,
+                                                  @RequestParam(value = "password") String password) {
+        return userServiceImpl.findUserByLoginAndPassword(login, password);
     }
 
     @DeleteMapping

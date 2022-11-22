@@ -29,8 +29,7 @@ public class User {
     private String password;
 
     @ManyToOne
-    @JoinColumn(name = "role_id")
-    @ColumnDefault("2")
+    @JoinColumn(name = "role_id", insertable = false)
     private Role role;
 
     @Column(name = "is_active")
