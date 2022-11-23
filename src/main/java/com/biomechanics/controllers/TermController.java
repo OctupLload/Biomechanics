@@ -30,8 +30,8 @@ public class TermController {
     }
 
     @GetMapping
-    public List<Term> findAll(){
-        return termServiceImpl.findAll();
+    public ResponseEntity<List<Term>> findAll(){
+        return ResponseEntity.ok().body(termServiceImpl.findAll());
     }
 
     @PostMapping()

@@ -48,8 +48,8 @@ public class ActionController {
     }
 
     @GetMapping(params = "action_id_prev")
-    public List<Action> getByActionByPrev(@RequestParam(value = "action_id_prev") Integer action_id_prev) {
-        return actionServiceImpl.findByActionIdPrev(action_id_prev);
+    public ResponseEntity<List<Action>> getByActionByPrev(@RequestParam(value = "action_id_prev") Integer action_id_prev) {
+        return ResponseEntity.ok().body(actionServiceImpl.findByActionIdPrev(action_id_prev));
     }
 
     @PostMapping()

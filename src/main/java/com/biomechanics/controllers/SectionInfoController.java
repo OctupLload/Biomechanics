@@ -31,18 +31,18 @@ public class SectionInfoController {
     }
 
     @GetMapping
-    public List<SectionInfo> findAll(){
-        return sectionInfoServiceImpl.findAll();
+    public ResponseEntity<List<SectionInfo>> findAll(){
+        return ResponseEntity.ok().body(sectionInfoServiceImpl.findAll());
     }
 
     @GetMapping(params = "city")
-    public List<SectionInfo> getByCity(@RequestParam(value = "city") String city) {
-        return sectionInfoServiceImpl.findByCity(city);
+    public ResponseEntity<List<SectionInfo>> getByCity(@RequestParam(value = "city") String city) {
+        return ResponseEntity.ok().body(sectionInfoServiceImpl.findByCity(city));
     }
 
     @GetMapping(params = "title")
-    public List<SectionInfo> getByTitle(@RequestParam(value = "title") String title) {
-        return sectionInfoServiceImpl.findByTitle(title);
+    public ResponseEntity<List<SectionInfo>> getByTitle(@RequestParam(value = "title") String title) {
+        return ResponseEntity.ok().body(sectionInfoServiceImpl.findByTitle(title));
     }
 
     @PostMapping()
