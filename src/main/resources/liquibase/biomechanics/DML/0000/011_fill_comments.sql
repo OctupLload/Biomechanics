@@ -13,7 +13,7 @@ VALUES ('Очень хорошее видео, мне понравилось!', 
        ('Да у меня так бабушка может.', 7, 7, CURRENT_DATE, CURRENT_DATE),
        ('Мой дед так фрицев обходил!', 8, 8, CURRENT_DATE, CURRENT_DATE),
        ('Такие же ножница, только лучше.', 9, 9, CURRENT_DATE, CURRENT_DATE),
-       ('Хлеборезка, но без хлеба.', 10, 10, CURRENT_DATE, CURRENT_DATE)
+       ('Хлеборезка, но без хлеба.', 10, 10, CURRENT_DATE, CURRENT_DATE);
 
 
 

@@ -1,5 +1,6 @@
 package com.biomechanics.domain.entities.terminology;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,6 +35,7 @@ public class Video {
 
     @OneToMany
     @JoinColumn(name = "video_id")
+    @JsonManagedReference
     private List<Comment> comments = new ArrayList<>();
 
     @Column(name = "create_date")

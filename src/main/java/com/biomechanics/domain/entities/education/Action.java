@@ -1,5 +1,6 @@
-package com.biomechanics.domain.entities.training;
+package com.biomechanics.domain.entities.education;
 
+import com.biomechanics.domain.entities.terminology.Video;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,21 +14,27 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "actions_tree", schema = "biomechanics")
-public class ActionTree {
+@Table(name = "actions", schema = "biomechanics")
+public class Action {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "actiond_id_prev")
-    private Action actionPrev;
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "description")
+    private String description;
 
     @ManyToOne
-    @JoinColumn(name = "actiond_id_next")
-    private Action actionNext;
+    @JoinColumn(name = "action_type_id")
+    private ActionType actionType;
+
+    @ManyToOne
+    @JoinColumn(name = "video_id")
+    private Video video;
 
     @Column(name = "create_date")
     private LocalDate createDate;

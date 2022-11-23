@@ -14,7 +14,7 @@ VALUES ('Leo', 'lucifer', 2, 1, 1, CURRENT_DATE, CURRENT_DATE),
        ('Panda', 'secret', 2, 1, 8, CURRENT_DATE, CURRENT_DATE),
        ('Max', 'strawberry', 2, 1, 9, CURRENT_DATE, CURRENT_DATE),
        ('Sweetie', 'christopher', 6, 1, 10, CURRENT_DATE, CURRENT_DATE),
-       ('admin', 'admin', 4, 1, NULL, CURRENT_DATE, CURRENT_DATE)
+       ('admin', 'admin', 4, 1, NULL, CURRENT_DATE, CURRENT_DATE);
 
 
 

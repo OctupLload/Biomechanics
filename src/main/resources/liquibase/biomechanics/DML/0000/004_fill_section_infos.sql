@@ -8,21 +8,9 @@ INSERT INTO biomechanics.section_infos (title,
 										preview_url,
 										address_id,
 										is_active)
-VALUES ('Ales Fintess', 'Fitness', 'alexfintess.ru', 5, 1);
-
-INSERT INTO biomechanics.section_infos (title,
-										short_description,
-										preview_url,
-										address_id,
-										is_active)
-VALUES ('I am in form', 'Fintess center', 'belform.ru', 2, 1);
-
-INSERT INTO biomechanics.section_infos (title,
-										short_description,
-										preview_url,
-										address_id,
-										is_active)
-VALUES ('Ferrum', 'Fitness center', '31ferrum.ru', 5, 0);
+VALUES ('Ales Fintess', 'Fitness', 'alexfintess.ru', 5, 1),
+       ('I am in form', 'Fintess center', 'belform.ru', 2, 1),
+       ('Ferrum', 'Fitness center', '31ferrum.ru', 5, 0);
 
 
 

@@ -23,7 +23,7 @@ VALUES ('Dorinda', NULL, 'Hinojosa', '+9736144005002', '2000-05-25', CURRENT_DAT
        ('Granville', NULL, 'Montes', '+5065522577924', '2000-09-04', CURRENT_DATE, CURRENT_DATE),
        ('Tina', NULL, 'Singletary', '+5976673380822', '2001-09-11', CURRENT_DATE, CURRENT_DATE),
        ('Ehtel', NULL, 'Dillard', '+3588886498724', '2001-03-19', CURRENT_DATE, CURRENT_DATE),
-       ('Kristie', NULL, 'Scales', '+209969129215', '2001-06-11', CURRENT_DATE, CURRENT_DATE)
+       ('Kristie', NULL, 'Scales', '+209969129215', '2001-06-11', CURRENT_DATE, CURRENT_DATE);
 
 
 

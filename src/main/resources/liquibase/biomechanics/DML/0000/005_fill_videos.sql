@@ -13,7 +13,7 @@ VALUES ('Аши гарами', 'Аши гарами от самбистов', 'h
        ('RNC', 'Rear naked choke', 'https://www.youtube.com/watch?v=xVdg4Mi1W8w', CURRENT_DATE, CURRENT_DATE),
        ('Торреада пасс', 'Торреада пасс от BJJ Library Seminar', 'https://www.youtube.com/watch?v=HcrOBNTiYpg', CURRENT_DATE, CURRENT_DATE),
        ('Ножницы', 'Прием ножницы', 'https://www.youtube.com/watch?v=Va6SYC5ZvXE', CURRENT_DATE, CURRENT_DATE),
-       ('Хлеборезка', 'Прием хлеборезка', 'https://www.youtube.com/watch?v=DgEiLpy1ov8', CURRENT_DATE, CURRENT_DATE)
+       ('Хлеборезка', 'Прием хлеборезка', 'https://www.youtube.com/watch?v=DgEiLpy1ov8', CURRENT_DATE, CURRENT_DATE);
 
 
 

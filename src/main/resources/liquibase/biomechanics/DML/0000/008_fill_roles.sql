@@ -9,7 +9,7 @@ VALUES ('admin', 'administrator', CURRENT_DATE, CURRENT_DATE),
        ('manager', 'manager', CURRENT_DATE, CURRENT_DATE),
        ('superadmin', 'super administrator', CURRENT_DATE, CURRENT_DATE),
        ('guest', 'guest', CURRENT_DATE, CURRENT_DATE),
-       ('coach', 'coach', CURRENT_DATE, CURRENT_DATE)
+       ('coach', 'coach', CURRENT_DATE, CURRENT_DATE);
 
 
 

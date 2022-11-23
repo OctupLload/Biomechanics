@@ -1,6 +1,7 @@
 package com.biomechanics.domain.entities.terminology;
 
 import com.biomechanics.domain.entities.authorization.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,6 +32,7 @@ public class Comment {
 
     @ManyToOne
     @JoinColumn(name = "video_id")
+    @JsonBackReference
     private Video video;
 
     @Column(name = "create_date")
