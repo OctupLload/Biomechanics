@@ -1,5 +1,6 @@
 package com.biomechanics.domain.entities.authorization;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,9 +28,11 @@ public class Role {
     @Column(name = "description")
     private String description;
 
+    @JsonIgnore
     @Column(name = "create_date")
     private LocalDate createDate;
 
+    @JsonIgnore
     @Column(name = "edit_date")
     private LocalDate editDate;
 }

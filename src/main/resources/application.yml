@@ -11,7 +11,8 @@ spring:
       maximum-pool-size: 10
   liquibase:
     change-log: classpath:liquibase/changelog.xml
-#  security:
-#    user:
-#      name: user
-#      password: password
+  security:
+    jwt:
+      secret:
+        access: c2VjcmV0X2FjY2Vzc19mb3Jfand0X3NlY3VyaXR5X2F1dGhvcml6YXRpb24= #secret_access_for_jwt_security_authorization
+        refresh: cmVmcmVzaF9jb2RlX2Zvcl9zcHJpbmdfYXBwbGljYXRpb25fand0X3dpdGhfY29kZXI= #refresh_code_for_spring_application_jwt_with_coder
