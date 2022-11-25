@@ -23,8 +23,12 @@ public class UserServiceImpl implements UserService<User>{
         userRepository.save(user);
     }
 
-    public int findUserByLoginAndPassword(String login, String password) {
+    public int existsByLoginAndPassword(String login, String password) {
         return userRepository.findUserByLoginAndPassword(login, password);
+    }
+
+    public User getByLogin(String login) {
+        return userRepository.getByLogin(login);
     }
 
     @Override
