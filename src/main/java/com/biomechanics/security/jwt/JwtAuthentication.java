@@ -16,10 +16,10 @@ public class JwtAuthentication implements Authentication {
     private boolean authenticated;
     private String username;
     private String firstName;
-    private Set<Role> roles;
+    private Set<Role> role;
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() { return roles; }
+    public Collection<? extends GrantedAuthority> getAuthorities() { return null; }
 
     @Override
     public Object getCredentials() { return null; }
@@ -41,4 +41,7 @@ public class JwtAuthentication implements Authentication {
     @Override
     public String getName() { return firstName; }
 
+
+    public void setRoles(Set<Role> roles) {
+    }
 }
