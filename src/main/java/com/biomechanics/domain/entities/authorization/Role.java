@@ -3,8 +3,8 @@ package com.biomechanics.domain.entities.authorization;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -13,9 +13,10 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @Table(name = "roles", schema = "biomechanics")
-public class Role {
+public class Role implements GrantedAuthority {
+
+    private final String vale;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,4 +36,9 @@ public class Role {
     @JsonIgnore
     @Column(name = "edit_date")
     private LocalDate editDate;
+
+    @Override
+    public String getAuthority() {
+        return vale;
+    }
 }

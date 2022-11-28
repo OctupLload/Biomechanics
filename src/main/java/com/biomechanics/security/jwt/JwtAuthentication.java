@@ -1,13 +1,11 @@
 package com.biomechanics.security.jwt;
 
-import com.biomechanics.domain.entities.security.Role;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -16,7 +14,7 @@ public class JwtAuthentication implements Authentication {
     private boolean authenticated;
     private String username;
     private String firstName;
-    private Set<Role> role;
+    private String role;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() { return null; }
@@ -41,7 +39,7 @@ public class JwtAuthentication implements Authentication {
     @Override
     public String getName() { return firstName; }
 
-
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(String role) {
+        this.role = role;
     }
 }
