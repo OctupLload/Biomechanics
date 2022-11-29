@@ -9,5 +9,4 @@ public class BiomechanicsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BiomechanicsApplication.class, args);
 	}
-
 }

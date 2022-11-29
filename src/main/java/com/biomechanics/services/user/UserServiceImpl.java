@@ -23,16 +23,12 @@ public class UserServiceImpl implements UserService<User>{
         userRepository.save(user);
     }
 
-    public int existsByLoginAndPassword(String login, String password) {
-        return userRepository.findUserByLoginAndPassword(login, password);
+    @Override
+    public void delete(User user) {
+        userRepository.delete(user);
     }
 
     public User getByLogin(String login) {
         return userRepository.getByLogin(login);
-    }
-
-    @Override
-    public void delete(User user) {
-        userRepository.delete(user);
     }
 }

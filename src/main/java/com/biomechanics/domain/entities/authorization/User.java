@@ -4,9 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Entity
@@ -23,9 +25,14 @@ public class User {
     private Integer id;
 
     @NotEmpty
+    @Size(min = 4, max = 32)
+    @Pattern(regexp = "^\\d*[a-zA-Z\\d\\_]*$")
     @Column(name = "login")
     private String login;
 
+    @NotEmpty
+    @Size(min = 8, max = 32)
+    @Pattern(regexp = "^\\d*[a-zA-Z\\d\\_]*$")
     @Column(name = "password")
     private String password;
 
