@@ -4,7 +4,6 @@ import com.biomechanics.domain.entities.terminology.Term;
 import com.biomechanics.services.term.TermServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -18,7 +17,6 @@ public class TermController {
 
     private final TermServiceImpl termServiceImpl;
 
-    @PreAuthorize("hasAuthority('superadmin')")
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Term>> getById(@PathVariable Integer id) {
         Optional<Term> term = termServiceImpl.findById(id);
@@ -31,7 +29,6 @@ public class TermController {
         }
     }
 
-    @PreAuthorize("hasAuthority('superadmin')")
     @GetMapping
     public ResponseEntity<List<Term>> findAll(){
         return ResponseEntity.ok().body(termServiceImpl.findAll());

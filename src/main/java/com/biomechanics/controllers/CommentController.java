@@ -1,6 +1,5 @@
 package com.biomechanics.controllers;
 
-import com.biomechanics.domain.entities.sections.SectionInfo;
 import com.biomechanics.domain.entities.terminology.Comment;
 import com.biomechanics.services.comment.CommentServiceImpl;
 import lombok.AllArgsConstructor;
