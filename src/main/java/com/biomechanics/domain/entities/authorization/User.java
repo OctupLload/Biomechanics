@@ -46,6 +46,7 @@ public class User {
     @Column(name = "is_delete", insertable = false)
     private byte isDelete;
 
+    @NotEmpty
     @ManyToOne
     @JoinColumn(name = "person_id")
     private Person person;
