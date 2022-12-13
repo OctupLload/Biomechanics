@@ -1,5 +1,6 @@
 package com.biomechanics.domain.entities.terminology;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Getter
@@ -30,6 +32,11 @@ public class Term {
     @ManyToOne
     @JoinColumn(name = "video_id")
     private Video video;
+
+    @OneToMany
+    @JoinColumn(name = "id")
+    @JsonManagedReference
+    private List<Comment> comments;
 
     @ManyToOne
     @JoinColumn(name = "term_type_id")

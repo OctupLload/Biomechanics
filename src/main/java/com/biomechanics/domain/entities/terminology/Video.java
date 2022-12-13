@@ -1,6 +1,5 @@
 package com.biomechanics.domain.entities.terminology;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,8 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter
@@ -32,11 +29,6 @@ public class Video {
 
     @Column(name = "url")
     private String url;
-
-    @OneToMany
-    @JoinColumn(name = "video_id")
-    @JsonManagedReference
-    private List<Comment> comments = new ArrayList<>();
 
     @Column(name = "create_date")
     private LocalDate createDate;

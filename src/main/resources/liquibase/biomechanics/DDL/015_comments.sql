@@ -7,7 +7,7 @@ CREATE TABLE biomechanics."comments" (
     "id" serial PRIMARY KEY,
     text varchar(1000),
     user_id int,
-    video_id int,
+    term_id int,
     create_date date,
     edit_date date
 );
@@ -18,6 +18,6 @@ FOREIGN KEY (user_id)
 REFERENCES biomechanics.users("id");
 
 ALTER TABLE biomechanics.comments
-ADD CONSTRAINT video_id_fk
-FOREIGN KEY (video_id)
-REFERENCES biomechanics.videos("id");
+ADD CONSTRAINT term_id_fk
+FOREIGN KEY (term_id)
+REFERENCES biomechanics.terms("id");

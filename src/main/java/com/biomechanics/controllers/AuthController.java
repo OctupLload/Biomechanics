@@ -6,6 +6,7 @@ import com.biomechanics.security.jwt.RefreshJwtRequest;
 import com.biomechanics.services.authorization.AuthService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,12 +26,14 @@ public class AuthController {
         return ResponseEntity.ok(token);
     }
 
+    @PreAuthorize("hasAnyRole('admin', 'user', 'manager', 'superadmin', 'guest', 'coach')")
     @PostMapping("/token")
     public ResponseEntity<JwtResponse> getNewAccessToken(@RequestBody RefreshJwtRequest request) {
         final JwtResponse token = authService.getAccessToken(request.getRefreshToken());
         return ResponseEntity.ok(token);
     }
 
+    @PreAuthorize("hasAnyRole('admin', 'user', 'manager', 'superadmin', 'guest', 'coach')")
     @PostMapping("/refresh")
     public ResponseEntity<JwtResponse> getNewRefreshToken(@RequestBody RefreshJwtRequest request) throws AuthException {
         final JwtResponse token = authService.refresh(request.getRefreshToken());

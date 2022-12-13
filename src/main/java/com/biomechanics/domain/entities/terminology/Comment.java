@@ -31,9 +31,9 @@ public class Comment {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "video_id")
+    @JoinColumn(name = "term_id")
     @JsonBackReference
-    private Video video;
+    private Term term;
 
     @Column(name = "create_date")
     private LocalDate createDate;
