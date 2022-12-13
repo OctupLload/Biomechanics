@@ -1,12 +1,14 @@
 package com.biomechanics.domain.entities.authorization;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Entity
@@ -22,7 +24,13 @@ public class Person {
     @Column(name = "id")
     private Integer id;
 
-    @NotEmpty
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    @JsonIgnore
+    private User user;
+
+    @NotBlank
+    @Size(min = 3, max = 32)
     @Column(name = "first_name")
     private String firstName;
 
@@ -32,11 +40,12 @@ public class Person {
     @Column(name = "last_name")
     private String lastName;
 
-    @NotEmpty
+    @NotBlank
+    @Size(min = 8, max = 32)
     @Column(name = "phone")
     private String phone;
 
-    @Column(name = "birth_day")
+    @Column(name = "birth_day", insertable = false)
     private String birthDay;
 
     @Column(name = "create_date")

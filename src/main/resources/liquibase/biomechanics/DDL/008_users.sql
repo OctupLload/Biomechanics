@@ -10,15 +10,9 @@ CREATE TABLE biomechanics.users (
     role_id int DEFAULT 2,
     is_active smallint DEFAULT 1,
     is_delete smallint DEFAULT 0,
-    person_id int,
     create_date date,
     edit_date date
 );
-
-ALTER TABLE biomechanics.users
-ADD CONSTRAINT person_id_fk
-FOREIGN KEY (person_id)
-REFERENCES biomechanics.persons("id");
 
 ALTER TABLE biomechanics.users
 ADD CONSTRAINT role_id_fk

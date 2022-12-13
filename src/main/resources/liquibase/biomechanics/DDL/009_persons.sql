@@ -5,6 +5,7 @@
 
 CREATE TABLE biomechanics.persons (
 	"id" serial PRIMARY KEY,
+    user_id int,
 	first_name varchar(45),
 	middle_name varchar(45),
 	last_name varchar(45),
@@ -13,4 +14,9 @@ CREATE TABLE biomechanics.persons (
 	create_date date,
 	edit_date date
 );
+
+ALTER TABLE biomechanics.persons
+ADD CONSTRAINT user_id_fk
+FOREIGN KEY ("user_id")
+REFERENCES biomechanics.users("id");
 
