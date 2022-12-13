@@ -1,6 +1,5 @@
 package com.biomechanics.domain.entities.authorization;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,11 +22,6 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    @JsonIgnore
-    private User user;
 
     @NotBlank
     @Size(min = 3, max = 32)

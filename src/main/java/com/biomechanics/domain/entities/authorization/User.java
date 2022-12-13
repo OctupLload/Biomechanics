@@ -1,6 +1,7 @@
 package com.biomechanics.domain.entities.authorization;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Getter
@@ -33,13 +33,19 @@ public class User {
     @NotBlank
     @Size(min = 8, max = 32)
     @Pattern(regexp = "^\\d*[a-zA-Z\\d\\_]*$")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(name = "password")
     private String password;
 
     @ManyToOne
     @JoinColumn(name = "role_id", insertable = false)
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Role role;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "person_id", referencedColumnName = "id")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Person person;
 
     @Column(name = "is_active", insertable = false)
     @JsonIgnore
@@ -48,12 +54,6 @@ public class User {
     @Column(name = "is_delete", insertable = false)
     @JsonIgnore
     private byte isDelete;
-
-    @NotEmpty
-    @NotNull
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private List<Person> person;
 
     @Column(name = "create_date")
     @JsonIgnore

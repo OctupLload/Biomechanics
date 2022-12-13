@@ -8,6 +8,7 @@ CREATE TABLE biomechanics.users (
     login varchar(45),
     "password" varchar(45),
     role_id int DEFAULT 2,
+    person_id int,
     is_active smallint DEFAULT 1,
     is_delete smallint DEFAULT 0,
     create_date date,
