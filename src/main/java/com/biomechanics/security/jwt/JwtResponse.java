@@ -1,5 +1,6 @@
 package com.biomechanics.security.jwt;
 
+import com.biomechanics.domain.entities.authorization.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -10,4 +11,5 @@ public class JwtResponse {
     private final String type = "Bearer";
     private String accessToken;
     private String refreshToken;
+    private User user;
 }
