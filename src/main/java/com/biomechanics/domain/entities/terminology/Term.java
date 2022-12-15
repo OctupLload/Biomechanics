@@ -1,6 +1,5 @@
 package com.biomechanics.domain.entities.terminology;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,8 +33,7 @@ public class Term {
     private Video video;
 
     @OneToMany
-    @JoinColumn(name = "id")
-    @JsonManagedReference
+    @JoinColumn(name = "term_id")
     private List<Comment> comments;
 
     @ManyToOne
