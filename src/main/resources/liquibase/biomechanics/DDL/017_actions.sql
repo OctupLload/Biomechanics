@@ -8,6 +8,7 @@ CREATE TABLE biomechanics.actions (
     title varchar(80),
     description varchar(3000),
     action_type_id int,
+    image_url text,
     video_id int,
     create_date date,
     edit_date date

@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Getter
@@ -26,6 +27,10 @@ public class Video {
 
     @Column(name = "description")
     private String description;
+
+    @OneToMany
+    @JoinColumn(name = "video_id")
+    private List<Term> terms;
 
     @Column(name = "url")
     private String url;

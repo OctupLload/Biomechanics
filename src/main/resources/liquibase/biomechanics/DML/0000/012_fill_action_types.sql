@@ -6,4 +6,5 @@
 INSERT INTO biomechanics.action_types ("type", create_date, edit_date)
 VALUES ('Удушающий', CURRENT_DATE, CURRENT_DATE),
        ('Болевой', CURRENT_DATE, CURRENT_DATE),
-       ('Перевод', CURRENT_DATE, CURRENT_DATE);
+       ('Перевод', CURRENT_DATE, CURRENT_DATE),
+       ('Стойка', CURRENT_DATE, CURRENT_DATE);

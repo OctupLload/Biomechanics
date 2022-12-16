@@ -4,11 +4,20 @@
 --preconditions onFail:MARK_RAN
 
 INSERT INTO biomechanics.actions_tree (action_id_prev, action_id_next, create_date, edit_date)
-VALUES (NULL, 3, CURRENT_DATE, CURRENT_DATE),
-       (3, 2, CURRENT_DATE, CURRENT_DATE),
-       (3, 6, CURRENT_DATE, CURRENT_DATE),
-       (5, 8, CURRENT_DATE, CURRENT_DATE),
-       (8, 2, CURRENT_DATE, CURRENT_DATE),
-       (5, 1, CURRENT_DATE, CURRENT_DATE),
-       (1, 2, CURRENT_DATE, CURRENT_DATE),
-       (6, 7, CURRENT_DATE, CURRENT_DATE);
+VALUES (3,2,'2022-12-13','2022-12-13'),
+       (3,6,'2022-12-13','2022-12-13'),
+       (5,8,'2022-12-13','2022-12-13'),
+       (8,2,'2022-12-13','2022-12-13'),
+       (5,1,'2022-12-13','2022-12-13'),
+       (1,2,'2022-12-13','2022-12-13'),
+       (6,7,'2022-12-13','2022-12-13'),
+       (9,10,'2022-12-16','2022-12-16'),
+       (9,3,'2022-12-16','2022-12-16'),
+       (NULL,9,'2022-12-16','2022-12-16'),
+       (9,11,'2022-12-16','2022-12-16'),
+       (9,12,'2022-12-16','2022-12-16'),
+       (10,5,'2022-12-16','2022-12-16'),
+       (10,4,'2022-12-16','2022-12-16'),
+       (10,11,'2022-12-16','2022-12-16'),
+       (6,2,'2022-12-16','2022-12-16'),
+       (6,11,'2022-12-16','2022-12-16');
